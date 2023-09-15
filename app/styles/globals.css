@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply dark:bg-black bg-white;
+	}
+}
+
+body {
+	@apply font-serif selection:text-white selection:bg-orange-300;
+	font-size: 1.4rem;
+}
+
+h1 {
+	@apply font-head;
+}
+
+p {
+	opacity: 80%;
+}
+
+a {
+	@apply text-blue-400 underline underline-offset-8 decoration-1 transition;
+}
+
+a:hover {
+	@apply text-black dark:text-white;
+}
+
+@media (min-width: 640px) {
+	.container,
+	.wide-container {
+		max-width: 640px;
+	}
+}
+
+/* @media (min-width: 768px) {
+	.container,
+	.wide-container {
+		max-width: 768px;
+	}
+} */
+
+/* @media (min-width: 1024px) {
+	.container {
+		max-width: 1280px;
+	}
+} */
