@@ -17,10 +17,6 @@ h1 {
 	@apply font-head;
 }
 
-p {
-	opacity: 80%;
-}
-
 a {
 	@apply text-blue-400 underline underline-offset-8 decoration-1 transition;
 }
@@ -34,6 +30,31 @@ a:hover {
 	.wide-container {
 		max-width: 640px;
 	}
+}
+
+.title::before {
+	background: linear-gradient(to bottom right, rgba(255, 175, 1, 0), rgba(255, 103, 1, 0), rgba(1, 183, 255, 0.3));
+	border-radius: 50%;
+	width: 480px;
+	height: 360px;
+	margin-left: -400px;
+	z-index: -1;
+}
+
+.title::after {
+	background: radial-gradient(rgba(1, 255, 77, 0.4), rgba(1, 65, 255, 0));
+	width: 240px;
+	height: 180px;
+	z-index: -2;
+}
+
+.title::before,
+.title::after {
+	content: "";
+	left: 50%;
+	position: absolute;
+	filter: blur(45px);
+	transform: translateZ(0);
 }
 
 /* @media (min-width: 768px) {

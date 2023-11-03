@@ -1,0 +1,51 @@
+name: Build and Deploy Website
+on:
+  push:
+    branches:
+      - "main"
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.7.6
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          cache: "pnpm"
+      - name: Get PNPM store directory
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+      - uses: actions/cache@v3
+        name: Setup PNPM cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm build
+        env:
+          BUN_ENV: production
+      - name: Push Changes
+        run: |
+          cd out
+          git init
+          echo 'cykreet.com' > CNAME
+
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          git add .
+          git commit -m "deploy" -a
+          git push "https://cykreet:$GITHUB_TOKEN@github.com/cykreet/cykreet.com.git" HEAD:gh-pages --verbose --force
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

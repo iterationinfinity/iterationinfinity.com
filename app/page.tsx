@@ -6,13 +6,13 @@ export default function Page() {
 			<Header />
 			<div className="mt-28 m-2 text-center sm:text-left">
 				<div className="uppercase font-black font-head text-8xl">
-					<h1>Arriving</h1>
+					<h1 className="title">Arriving</h1>
 					<h1>
-						<span className="bg-nice-orange dark:text-black">Soon.</span>
+						<span>Soon.</span>
 					</h1>
 				</div>
 				<div className="flex text-xl mt-6">
-					<div className="float-right sm:pl-80 leading-none space-y-4">
+					<div className="float-right sm:pl-80 leading-none space-y-4 opacity-80">
 						<p>please be patient, while we work on building a space to showcase our passion and work.</p>
 						<p className="font-barcode text-6xl">iterate</p>
 					</div>
@@ -20,7 +20,7 @@ export default function Page() {
 			</div>
 			<div className="text-center mt-20">
 				<p className="opacity-50 text-xl">in the meantime, let's talk</p>
-				<a href="mailto:contact@iterationinfinity.com">contact@iterationinfinity.com</a>
+				<a href="mailto:mail@iterationinfinity.com">mail@iterationinfinity.com</a>
 			</div>
 		</div>
 	);
