@@ -46,6 +46,6 @@ jobs:
 
           git add .
           git commit -m "deploy" -a
-          git push "https://iterationinfinity:$GITHUB_TOKEN@github.com/iterationinfinity/iterationinfinity.com.git" HEAD:gh-pages --verbose --force
+          git push "https://cykreet:$GITHUB_TOKEN@github.com/iterationinfinity/iterationinfinity.com.git" HEAD:gh-pages --verbose --force
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
