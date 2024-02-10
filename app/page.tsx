@@ -1,5 +1,5 @@
 import Header from "./components/header";
-import { Instagram, Twitter } from "feather-icons-react";
+import { Instagram, Twitter } from "react-feather";
 
 export default function Page() {
 	return (
