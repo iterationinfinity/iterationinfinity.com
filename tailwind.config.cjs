@@ -5,7 +5,6 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				serif: ["'Roboto', serif"],
 				barcode: ["'Libre Barcode 128', cursive"],
 			},
 			colors: {

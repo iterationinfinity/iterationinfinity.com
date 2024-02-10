@@ -13,7 +13,7 @@ export default function Page() {
 					</h1>
 				</div>
 				<div className="flex text-xl mt-6">
-					<div className="float-right sm:pl-80 leading-none space-y-4">
+					<div className="float-right sm:pl-72 leading-none space-y-4">
 						<p>please be patient, while we work on building a space to showcase our passion and work.</p>
 						<p className="font-barcode text-6xl">iterate</p>
 					</div>
