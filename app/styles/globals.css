@@ -13,10 +13,6 @@ body {
 	font-size: 1.4rem;
 }
 
-h1 {
-	@apply font-head;
-}
-
 a {
 	@apply text-blue-400 underline underline-offset-8 decoration-1 transition;
 }

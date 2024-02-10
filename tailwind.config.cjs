@@ -5,8 +5,7 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				serif: ["'Vollkorn', serif"],
-				head: ["'Ruslan Display', cursive"],
+				serif: ["'Roboto', serif"],
 				barcode: ["'Libre Barcode 128', cursive"],
 			},
 			colors: {
